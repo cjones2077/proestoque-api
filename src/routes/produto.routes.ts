@@ -1,7 +1,11 @@
 import { Router } from 'express';
 import produtoController from '../controllers/produto.controller';
+import { autenticar } from '../middlewares/auth';
 
 const router = Router();
+
+// Protege todas as rotas de produtos com autenticação JWT
+router.use(autenticar);
 
 router.get('/', produtoController.listar);
 router.get('/:id', produtoController.buscarPorId);

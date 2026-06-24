@@ -1,7 +1,6 @@
+import { config } from './config';
 import { app } from './app';
 
-const PORT = process.env.PORT ? Number(process.env.PORT) : 3333;
-
-app.listen(PORT, () => {
-  console.log(`Servidor HTTP rodando na porta ${PORT}! 🚀`);
+app.listen(config.PORT, () => {
+  console.log(`Servidor HTTP rodando na porta ${config.PORT}! 🚀`);
 });
